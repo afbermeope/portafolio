@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { 
   Globe, 
   ArrowRight, 
@@ -341,11 +341,6 @@ function App() {
     };
   }, []);
 
-  const handleFormSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert("Thank you for subscribing to my updates!");
-  };
-
   const getLinkIcon = (iconType?: string) => {
     switch (iconType) {
       case 'playstore':
@@ -471,7 +466,7 @@ function App() {
             <h1 
               id="hero-heading"
               style={{ fontFamily: "'Instrument Serif', serif" }} 
-              className="text-6xl md:text-7xl lg:text-8xl text-white mb-6 tracking-tight whitespace-nowrap italic font-normal"
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white mb-6 tracking-tight md:whitespace-nowrap italic font-normal"
             >
               Built for the curious
             </h1>
@@ -480,44 +475,20 @@ function App() {
               Explore the professional portfolio and software products crafted by Andrés Felipe Bermeo Pérez. Focus on performance, database architecture, and beautiful interfaces.
             </p>
 
-            <div className="max-w-md w-full space-y-4">
-              <form onSubmit={handleFormSubmit} id="subscribe-form" className="liquid-glass rounded-full pl-6 pr-2 py-2 flex items-center gap-3">
-                <input 
-                  type="email" 
-                  required
-                  id="input-email"
-                  placeholder="Subscribe to my newsletters..." 
-                  className="bg-transparent border-none text-white placeholder:text-white/40 text-sm md:text-base outline-none w-full"
-                />
-                <button 
-                  type="submit" 
-                  id="btn-subscribe" 
-                  aria-label="Subscribe"
-                  className="bg-white rounded-full p-2.5 md:p-3 text-black hover:bg-white/90 transition-colors flex items-center justify-center cursor-pointer"
-                >
-                  <ArrowRight className="w-4 h-4 md:w-5 md:h-5" size={20} />
-                </button>
-              </form>
-              
-              <p id="hero-subtitle" className="text-white/50 text-xs leading-relaxed px-4">
-                Stay updated with the latest news and insights. Subscribe to my updates today.
-              </p>
-              
-              <div className="pt-4">
-                <a 
-                  href="#about"
-                  id="btn-explore" 
-                  className="liquid-glass rounded-full px-8 py-3 text-white text-xs font-semibold uppercase tracking-wider hover:bg-white/5 transition-colors inline-block cursor-pointer border-none"
-                >
-                  Explore Portfolio
-                </a>
-              </div>
+            <div className="pt-4">
+              <a 
+                href="#about"
+                id="btn-explore" 
+                className="liquid-glass rounded-full px-8 py-3 text-white text-xs font-semibold uppercase tracking-wider hover:bg-white/5 transition-colors inline-block cursor-pointer border-none"
+              >
+                Explore Portfolio
+              </a>
             </div>
           </div>
         </section>
 
         {/* ABOUT SECTION */}
-        <section id="about" className="max-w-5xl mx-auto px-6 py-24 scroll-mt-20">
+        <section id="about" className="max-w-5xl mx-auto px-6 py-16 md:py-24 scroll-mt-20">
           <div className="text-center mb-16">
             <h2 style={{ fontFamily: "'Instrument Serif', serif" }} className="text-5xl md:text-6xl text-white italic font-normal">
               About Me
@@ -527,19 +498,8 @@ function App() {
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
             {/* Profile Card */}
-            <div className="md:col-span-5 liquid-glass rounded-3xl p-8 flex flex-col items-center text-center">
-              <div className="relative w-40 h-40 mb-6 rounded-full overflow-hidden border-2 border-white/20">
-                <img 
-                  src={`${import.meta.env.BASE_URL}img/prof.png`} 
-                  alt="Andrés Felipe Bermeo Pérez" 
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    // Fallback to profile.jpg if prof.png is missing/errors
-                    (e.target as HTMLImageElement).src = `${import.meta.env.BASE_URL}img/profile.jpg`;
-                  }}
-                />
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-1">Andrés Felipe Bermeo Pérez</h3>
+            <div className="md:col-span-5 liquid-glass rounded-3xl p-6 md:p-8 flex flex-col items-center text-center">
+              <h3 className="text-2xl font-bold text-white mb-1 mt-2">Andrés Felipe Bermeo Pérez</h3>
               <p className="text-white/60 text-sm mb-6 uppercase tracking-wider font-semibold">Software Developer</p>
               
               <div className="w-full space-y-3.5 text-left border-t border-white/10 pt-6 text-sm text-white/80">
@@ -582,7 +542,7 @@ function App() {
 
             {/* Biography */}
             <div className="md:col-span-7 space-y-6">
-              <div className="liquid-glass rounded-3xl p-8 space-y-6">
+              <div className="liquid-glass rounded-3xl p-6 md:p-8 space-y-6">
                 <h4 className="text-xl font-semibold text-white">Professional Profile</h4>
                 <p className="text-white/80 leading-relaxed text-base">
                   I am a passionate software developer specializing in backend architecture, database orchestration, and responsive application designs. With extensive experience across multiple programming frameworks, I focus on constructing clean, performant software products.
@@ -607,7 +567,7 @@ function App() {
         </section>
 
         {/* EXPERIENCE SECTION */}
-        <section id="experience" className="max-w-5xl mx-auto px-6 py-24 scroll-mt-20">
+        <section id="experience" className="max-w-5xl mx-auto px-6 py-16 md:py-24 scroll-mt-20">
           <div className="text-center mb-16">
             <h2 style={{ fontFamily: "'Instrument Serif', serif" }} className="text-5xl md:text-6xl text-white italic font-normal">
               Work Experience
@@ -617,7 +577,7 @@ function App() {
 
           <div className="space-y-6">
             {experiences.map((exp, idx) => (
-              <div key={idx} className="liquid-glass rounded-3xl p-8 flex flex-col md:flex-row md:items-start justify-between gap-6 transition-all hover:bg-white/[0.03]">
+              <div key={idx} className="liquid-glass rounded-3xl p-6 md:p-8 flex flex-col md:flex-row md:items-start justify-between gap-6 transition-all hover:bg-white/[0.03]">
                 <div className="space-y-4 flex-1">
                   <div className="flex items-start gap-4">
                     <div className="p-3 rounded-2xl liquid-glass bg-white/5 text-white/80 mt-1">
@@ -669,7 +629,7 @@ function App() {
         </section>
 
         {/* EDUCATION SECTION */}
-        <section id="education" className="max-w-5xl mx-auto px-6 py-24 scroll-mt-20">
+        <section id="education" className="max-w-5xl mx-auto px-6 py-16 md:py-24 scroll-mt-20">
           <div className="text-center mb-16">
             <h2 style={{ fontFamily: "'Instrument Serif', serif" }} className="text-5xl md:text-6xl text-white italic font-normal">
               Education
@@ -679,7 +639,7 @@ function App() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {educationList.map((edu, idx) => (
-              <div key={idx} className="liquid-glass rounded-3xl p-8 flex flex-col justify-between gap-6 transition-all hover:bg-white/[0.03]">
+              <div key={idx} className="liquid-glass rounded-3xl p-6 md:p-8 flex flex-col justify-between gap-6 transition-all hover:bg-white/[0.03]">
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
                     <div className="p-3 rounded-2xl liquid-glass bg-white/5 text-white/80">
@@ -708,7 +668,7 @@ function App() {
         </section>
 
         {/* SKILLS SECTION */}
-        <section id="skills" className="max-w-5xl mx-auto px-6 py-24 scroll-mt-20">
+        <section id="skills" className="max-w-5xl mx-auto px-6 py-16 md:py-24 scroll-mt-20">
           <div className="text-center mb-16">
             <h2 style={{ fontFamily: "'Instrument Serif', serif" }} className="text-5xl md:text-6xl text-white italic font-normal">
               Skills & Technologies
@@ -735,7 +695,7 @@ function App() {
           </div>
 
           {/* Workflow card */}
-          <div className="liquid-glass rounded-3xl p-8 max-w-2xl mx-auto">
+          <div className="liquid-glass rounded-3xl p-6 md:p-8 max-w-2xl mx-auto">
             <h3 className="text-xl font-bold text-white mb-4 text-center">Workflow & Methodologies</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
@@ -754,7 +714,7 @@ function App() {
         </section>
 
         {/* AWARDS SECTION */}
-        <section id="awards" className="max-w-5xl mx-auto px-6 py-24 scroll-mt-20">
+        <section id="awards" className="max-w-5xl mx-auto px-6 py-16 md:py-24 scroll-mt-20">
           <div className="text-center mb-16">
             <h2 style={{ fontFamily: "'Instrument Serif', serif" }} className="text-5xl md:text-6xl text-white italic font-normal">
               Awards & Certifications
@@ -791,7 +751,7 @@ function App() {
         </section>
 
         {/* INTERESTS SECTION */}
-        <section id="interests" className="max-w-5xl mx-auto px-6 py-24 scroll-mt-20 mb-20">
+        <section id="interests" className="max-w-5xl mx-auto px-6 py-16 md:py-24 scroll-mt-20 mb-20">
           <div className="text-center mb-16">
             <h2 style={{ fontFamily: "'Instrument Serif', serif" }} className="text-5xl md:text-6xl text-white italic font-normal">
               Personal Interests
@@ -801,7 +761,7 @@ function App() {
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             <div className="md:col-span-6 space-y-6">
-              <div className="liquid-glass rounded-3xl p-8 space-y-6">
+              <div className="liquid-glass rounded-3xl p-6 md:p-8 space-y-6">
                 <div className="flex items-center gap-3">
                   <Gamepad2 className="w-6 h-6 text-white/60" />
                   <h3 className="text-xl font-bold text-white">Gaming & Community</h3>
