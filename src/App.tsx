@@ -364,7 +364,7 @@ function App() {
       <div className="fixed inset-0 w-full h-full pointer-events-none select-none overflow-hidden z-0">
         <video
           ref={videoRef}
-          src="/video.mp4"
+          src={`${import.meta.env.BASE_URL}video.mp4`}
           className="absolute inset-0 w-full h-full object-cover translate-y-[17%]"
           muted
           autoPlay
@@ -530,12 +530,12 @@ function App() {
             <div className="md:col-span-5 liquid-glass rounded-3xl p-8 flex flex-col items-center text-center">
               <div className="relative w-40 h-40 mb-6 rounded-full overflow-hidden border-2 border-white/20">
                 <img 
-                  src="img/prof.png" 
+                  src={`${import.meta.env.BASE_URL}img/prof.png`} 
                   alt="Andrés Felipe Bermeo Pérez" 
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     // Fallback to profile.jpg if prof.png is missing/errors
-                    (e.target as HTMLImageElement).src = "img/profile.jpg";
+                    (e.target as HTMLImageElement).src = `${import.meta.env.BASE_URL}img/profile.jpg`;
                   }}
                 />
               </div>
@@ -776,7 +776,7 @@ function App() {
                 </div>
                 
                 <a 
-                  href={award.pdf} 
+                  href={`${import.meta.env.BASE_URL}${award.pdf}`} 
                   target="_blank"
                   rel="noreferrer"
                   aria-label={`Open PDF certificate for ${award.title}`}
@@ -823,7 +823,7 @@ function App() {
             <div className="md:col-span-6">
               <div className="liquid-glass rounded-3xl p-4 flex items-center justify-center">
                 <img 
-                  src="img/intereses.png" 
+                  src={`${import.meta.env.BASE_URL}img/intereses.png`} 
                   alt="Landscape and gaming interests" 
                   className="rounded-2xl w-full h-auto object-cover max-h-[350px]"
                 />
@@ -889,7 +889,7 @@ function App() {
             
             {/* Modal Image */}
             <img 
-              src={`img/${lightboxImage}`} 
+              src={`${import.meta.env.BASE_URL}img/${lightboxImage}`} 
               alt="Certificate or interface preview" 
               className="max-h-[85vh] w-auto max-w-full rounded-2xl object-contain select-none"
             />
