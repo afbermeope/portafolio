@@ -15,7 +15,6 @@ import {
   X, 
   Menu, 
   BookOpen, 
-  Gamepad2, 
   CheckCircle2 
 } from 'lucide-react';
 
@@ -340,7 +339,7 @@ function App() {
       });
 
     // Intersection Observer to highlight active section in Navbar
-    const sections = ['home', 'about', 'experience', 'education', 'skills', 'awards', 'interests'];
+    const sections = ['home', 'about', 'experience', 'education', 'skills', 'awards'];
     const observers = sections.map(sectionId => {
       const el = document.getElementById(sectionId);
       if (!el) return null;
@@ -410,8 +409,7 @@ function App() {
                 { id: 'experience', label: 'Experience' },
                 { id: 'education', label: 'Education' },
                 { id: 'skills', label: 'Skills' },
-                { id: 'awards', label: 'Awards' },
-                { id: 'interests', label: 'Interests' }
+                { id: 'awards', label: 'Awards' }
               ].map(item => (
                 <a 
                   key={item.id}
@@ -456,8 +454,7 @@ function App() {
               { id: 'experience', label: 'Experience' },
               { id: 'education', label: 'Education' },
               { id: 'skills', label: 'Skills' },
-              { id: 'awards', label: 'Awards' },
-              { id: 'interests', label: 'Interests' }
+              { id: 'awards', label: 'Awards' }
             ].map(item => (
               <a 
                 key={item.id}
@@ -758,7 +755,7 @@ function App() {
         </section>
 
         {/* AWARDS SECTION */}
-        <section id="awards" className="max-w-5xl mx-auto px-6 py-16 md:py-24 scroll-mt-20">
+        <section id="awards" className="max-w-5xl mx-auto px-6 py-16 md:py-24 scroll-mt-20 mb-20">
           <div className="text-center mb-16">
             <h2 style={{ fontFamily: "'Instrument Serif', serif" }} className="text-5xl md:text-6xl text-white italic font-normal">
               Awards & Certifications
@@ -791,48 +788,6 @@ function App() {
                 </a>
               </div>
             ))}
-          </div>
-        </section>
-
-        {/* INTERESTS SECTION */}
-        <section id="interests" className="max-w-5xl mx-auto px-6 py-16 md:py-24 scroll-mt-20 mb-20">
-          <div className="text-center mb-16">
-            <h2 style={{ fontFamily: "'Instrument Serif', serif" }} className="text-5xl md:text-6xl text-white italic font-normal">
-              Personal Interests
-            </h2>
-            <div className="w-16 h-0.5 bg-white/20 mx-auto mt-4" />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-            <div className="md:col-span-6 space-y-6">
-              <div className="liquid-glass rounded-3xl p-6 md:p-8 space-y-6">
-                <div className="flex items-center gap-3">
-                  <Gamepad2 className="w-6 h-6 text-white/60" />
-                  <h3 className="text-xl font-bold text-white">Gaming & Community</h3>
-                </div>
-                <p className="text-white/85 leading-relaxed text-sm md:text-base">
-                  Apart from being a developer, I enjoy gaming and actively participate in a local gaming community in Ibagué. We organize gatherings, test software products together, and participate in tournaments.
-                </p>
-                
-                <div className="flex items-center gap-3 border-t border-white/10 pt-6">
-                  <Globe className="w-6 h-6 text-white/60" />
-                  <h3 className="text-xl font-bold text-white">Cycling & Nature</h3>
-                </div>
-                <p className="text-white/85 leading-relaxed text-sm md:text-base">
-                  I love getting out into the fresh air and riding my bicycle. Exploring the landscapes surrounding Ibagué provides a great balance to hours spent coding and keeps my mind fresh and creative.
-                </p>
-              </div>
-            </div>
-
-            <div className="md:col-span-6">
-              <div className="liquid-glass rounded-3xl p-4 flex items-center justify-center">
-                <img 
-                  src={`${import.meta.env.BASE_URL}img/intereses.png`} 
-                  alt="Landscape and gaming interests" 
-                  className="rounded-2xl w-full h-auto object-cover max-h-[350px]"
-                />
-              </div>
-            </div>
           </div>
         </section>
 
