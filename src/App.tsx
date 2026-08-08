@@ -3,6 +3,7 @@ import {
   Globe, 
   ArrowRight, 
   Github, 
+  Linkedin,
   Mail, 
   Phone, 
   MapPin, 
@@ -23,6 +24,7 @@ interface ExperienceItem {
   company: string;
   period: string;
   description: string;
+  highlights?: string[];
   image?: string;
   links?: {
     label: string;
@@ -51,22 +53,52 @@ interface AwardItem {
 
 const experiences: ExperienceItem[] = [
   {
-    title: "Professional in software and database design",
-    company: "UNODC (United Nations Office on Drugs and Crime)",
-    period: "July 2024 - Present",
-    description: "Providing database design and development mentorship for the National Registry of Deforested Zones (RNZD) project, overseen by IDEAM and CONALDEF. Responsibilities include designing data models, structuring databases using PostgreSQL with PostGIS, and orchestrating massive data migration from legacy systems (Oracle to PostgreSQL). Developed interoperability endpoints to capture environmental sanctions data from Regional Autonomous Corporations (CARs) and created automation scripts. Contributed significantly to the project's technical operations manual."
+    title: "IT Professional - National Registry of Deforested Zones (RNZD)",
+    company: "IDEAM (Institute of Hydrology, Meteorology and Environmental Studies), Bogotá",
+    period: "April 2026 - Present",
+    description: "Leading IT development, architectural modeling, and database engineering for the National Registry of Deforested Zones (RNZD), ensuring high scalability, information security, and institutional interoperability.",
+    highlights: [
+      "Design and implementation of core relational and spatial database models for the RNZD.",
+      "Development and maintenance of functional modules and scalable microservices.",
+      "Implementation of secure interoperability protocols connecting RNZD with external environmental entities.",
+      "Production monitoring, version control governance, and automated CI/CD deployment pipelines.",
+      "Information security management, automated functional validation, and performance testing.",
+      "Technical documentation and institutional capacity building across partner entities."
+    ]
+  },
+  {
+    title: "Professional in Software and Database Design",
+    company: "UNODC (United Nations Office on Drugs and Crime), Bogotá",
+    period: "July 2024 - March 2026",
+    description: "Served as Technical Lead for the National Registry of Deforested Zones (RNZD) project, directing full-stack architecture, spatial database modeling, and automated data ingestion workflows.",
+    highlights: [
+      "Advanced spatial database modeling and administration in PostgreSQL with PostGIS.",
+      "Frontend web application development using Angular.",
+      "Technical leadership and architectural supervision for the RNZD platform.",
+      "Automated geospatial and environmental data ingestion pipelines via WFS and REST APIs.",
+      "Orchestrated large-scale database migrations from legacy Oracle systems to PostgreSQL."
+    ]
   },
   {
     title: "Software Engineer I",
     company: "Alcanos de Colombia",
     period: "June 2023 - July 2024",
-    description: "In charge of developing and maintaining critical enterprise applications in multiple languages. Provided database support, designed utility scripts, and implemented features to optimize operations."
+    description: "Developed and maintained critical enterprise applications, backend services, and database utility scripts to optimize business workflows.",
+    highlights: [
+      "Backend and enterprise software development in C# (.NET).",
+      "Full-stack maintenance and enhancement across C#, Angular, and PHP codebases.",
+      "Agile sprint planning, database queries, and system stabilization."
+    ]
   },
   {
     title: "Frontend I Developer",
     company: "enerBit",
-    period: "February 2022 - January 2023",
-    description: "Contributed to building frontend experiences for the digital energy startup. Developed responsive client portals and mobile applications using modern frameworks and agile Scrum methodologies.",
+    period: "January 2022 - February 2023",
+    description: "Engineered responsive client portals and mobile applications for the digital energy ecosystem under agile Scrum methodologies.",
+    highlights: [
+      "Cross-platform mobile application development with Flutter.",
+      "Modern web user interfaces with Vue.js and microfrontends in React."
+    ],
     links: [
       { label: "Website", url: "https://enerbit.co/", icon: 'web' },
       { label: "Play Store", url: "https://play.google.com/store/apps/details?id=me.enerbit", icon: 'playstore' },
@@ -74,34 +106,26 @@ const experiences: ExperienceItem[] = [
     ]
   },
   {
-    title: "Data Application Engineer",
+    title: "Software Engineer in Analytics",
     company: "Celsia",
-    period: "September 2019 - February 2022",
-    description: "Built application modules, integrated backend data sources, and automated business workflows under agile frameworks to support energy management systems."
-  },
-  {
-    title: "IT Solutions Professional",
-    company: "Enertolima",
-    period: "August 2019 - September 2019",
-    description: "Developed Android mobile solutions and custom PHP dashboards. Designed complex SQL reports and maintained production databases."
+    period: "January 2018 - January 2022",
+    description: "Delivered technological advisory, application module engineering, Docker containerization, and data analytics solutions supporting energy management platforms.",
+    highlights: [
+      "Engineering of application modules and backend data integrations.",
+      "Containerization and environment orchestration using Docker.",
+      "Data analytics workflows and business process automation under agile frameworks."
+    ]
   },
   {
     title: "Innovation Assistant",
     company: "Enertolima",
-    period: "August 2018 - August 2019",
-    description: "Assisted in research and development of Android tools and PHP web platforms to increase operational efficiency."
-  },
-  {
-    title: "Web Developer",
-    company: "Enertolima",
     period: "August 2017 - August 2018",
-    description: "Engineered a custom web chronogram platform to track and coordinate company orders, boosting scheduling transparency."
-  },
-  {
-    title: "Hardware Consulting Engineer",
-    company: "Phillips",
-    period: "September 2016 - November 2016",
-    description: "Managed local networking infrastructure, diagnostics, and hardware performance tuning for corporate terminals."
+    description: "Assisted in research and development of internal software tools, custom PHP reporting dashboards, Android utilities, and database management.",
+    highlights: [
+      "Custom web and mobile software development.",
+      "Automated management reporting platforms and SQL queries.",
+      "Operational database administration and system support."
+    ]
   },
   {
     title: "Android Developer",
@@ -139,34 +163,34 @@ const experiences: ExperienceItem[] = [
 const educationList: EducationItem[] = [
   {
     school: "Universidad del Tolima",
-    degree: "Systems Engineer",
-    period: "August 2011 - December 2016",
+    degree: "Systems Engineer (Ingeniero de Sistemas)",
+    period: "2016",
     image: "diploma.png"
   },
   {
     school: "National Learning Service (SENA)",
-    degree: "Technologist in Analysis and Development of Information Systems (ADSI)",
-    period: "August 2016 - May 2018",
+    degree: "Technologist in Systems (Tecnólogo en Sistemas - ADSI)",
+    period: "2017",
     image: "diploma ADSI.png"
   }
 ];
 
 const skillCategories: SkillCategory[] = [
   {
-    category: "Languages",
-    skills: ["PHP", "Python", "Java", "C#", "JavaScript", "TypeScript", "HTML5", "CSS3"]
+    category: "Languages & Backend",
+    skills: ["PHP / Laravel", "Python", "C# / .NET", "TypeScript", "JavaScript", "SQL"]
   },
   {
-    category: "Frameworks & Runtimes",
-    skills: ["React", "Vue", "Laravel", "CodeIgniter", "FastAPI", "Flask", "Flutter", "Ionic", "Bootstrap", "jQuery"]
+    category: "Frontend & Mobile",
+    skills: ["Angular", "React", "Vue.js", "Flutter", "Ionic", "HTML5", "CSS3 / Tailwind"]
   },
   {
     category: "Databases & GIS",
     skills: ["PostgreSQL", "PostGIS", "MySQL", "Oracle DB", "SQL Server"]
   },
   {
-    category: "DevOps & Tools",
-    skills: ["Docker", "Git", "GitHub", "Bitbucket", "Azure", "Jira", "Trello", "Apache"]
+    category: "DevOps & Architecture",
+    skills: ["Docker", "CI/CD", "Technical Leadership", "Microservices", "REST & WFS", "Git / GitHub", "Bitbucket"]
   }
 ];
 
@@ -500,7 +524,7 @@ function App() {
             {/* Profile Card */}
             <div className="md:col-span-5 liquid-glass rounded-3xl p-6 md:p-8 flex flex-col items-center text-center">
               <h3 className="text-2xl font-bold text-white mb-1 mt-2">Andrés Felipe Bermeo Pérez</h3>
-              <p className="text-white/60 text-sm mb-6 uppercase tracking-wider font-semibold">Software Developer</p>
+              <p className="text-white/60 text-xs mb-6 uppercase tracking-wider font-semibold">Software Engineer | DevOps & Tech Lead | DBA</p>
               
               <div className="w-full space-y-3.5 text-left border-t border-white/10 pt-6 text-sm text-white/80">
                 <div className="flex items-center gap-3">
@@ -519,6 +543,15 @@ function App() {
 
               {/* Social links */}
               <div className="flex gap-3 mt-8">
+                <a 
+                  href="https://www.linkedin.com/in/andres-bermeo-06a265275/" 
+                  target="_blank" 
+                  rel="noreferrer"
+                  aria-label="LinkedIn Profile" 
+                  className="liquid-glass rounded-full p-3 text-white/80 hover:text-white hover:bg-white/5 transition-all flex items-center justify-center"
+                >
+                  <Linkedin className="w-5 h-5" size={20} />
+                </a>
                 <a 
                   href="https://github.com/afbermeope" 
                   target="_blank" 
@@ -545,10 +578,10 @@ function App() {
               <div className="liquid-glass rounded-3xl p-6 md:p-8 space-y-6">
                 <h4 className="text-xl font-semibold text-white">Professional Profile</h4>
                 <p className="text-white/80 leading-relaxed text-base">
-                  I am a passionate software developer specializing in backend architecture, database orchestration, and responsive application designs. With extensive experience across multiple programming frameworks, I focus on constructing clean, performant software products.
+                  Software Engineer with solid experience in software development, cloud architecture, and DevOps, participating in high-impact projects for both the public and private sectors.
                 </p>
                 <p className="text-white/80 leading-relaxed text-base">
-                  I offer adaptability to changing technologies, service-minded mentorship, and a strong sense of responsibility. I excel in collaborative, cross-functional agile settings and thrive when building creative integrations for complex projects.
+                  Experienced in leading technical engineering teams, designing complex relational and spatial database models, and delivering robust end-to-end solutions with a deep focus on automation, systems integration, scalable architectures, and modern frontend/backend development.
                 </p>
                 
                 <div className="grid grid-cols-2 gap-4 border-t border-white/10 pt-6">
@@ -557,8 +590,8 @@ function App() {
                     <p className="text-white text-sm font-semibold">Spanish (Native), English</p>
                   </div>
                   <div>
-                    <p className="text-white/40 text-xs uppercase tracking-wider mb-1">Key Domain</p>
-                    <p className="text-white text-sm font-semibold">DB Design, API Endpoints</p>
+                    <p className="text-white/40 text-xs uppercase tracking-wider mb-1">Key Domains</p>
+                    <p className="text-white text-sm font-semibold">DBA & GIS, DevOps & Cloud</p>
                   </div>
                 </div>
               </div>
@@ -591,6 +624,17 @@ function App() {
                   <p className="text-white/85 text-sm md:text-base leading-relaxed pl-1">
                     {exp.description}
                   </p>
+
+                  {exp.highlights && exp.highlights.length > 0 && (
+                    <ul className="space-y-1.5 pl-2 pt-1">
+                      {exp.highlights.map((item, hIdx) => (
+                        <li key={hIdx} className="flex items-start gap-2.5 text-white/80 text-sm leading-relaxed">
+                          <span className="inline-block w-1.5 h-1.5 rounded-full bg-white/60 mt-2 shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                   
                   {/* Experience Card Actions */}
                   <div className="flex flex-wrap items-center gap-3 pt-2 pl-1">
@@ -798,10 +842,19 @@ function App() {
       <footer className="relative z-10 flex flex-col items-center gap-4 pb-12 pt-6 w-full border-t border-white/5 bg-black/45 backdrop-blur-md">
         <div className="flex gap-4">
           <a 
+            href="https://www.linkedin.com/in/andres-bermeo-06a265275/" 
+            target="_blank" 
+            rel="noreferrer"
+            aria-label="LinkedIn Profile" 
+            className="liquid-glass rounded-full p-4 text-white/80 hover:text-white hover:bg-white/5 transition-all flex items-center justify-center"
+          >
+            <Linkedin className="w-5 h-5" size={20} />
+          </a>
+          <a 
             href="https://github.com/afbermeope" 
             target="_blank" 
             rel="noreferrer"
-            aria-label="Instagram/Github" 
+            aria-label="GitHub Profile" 
             className="liquid-glass rounded-full p-4 text-white/80 hover:text-white hover:bg-white/5 transition-all flex items-center justify-center"
           >
             <Github className="w-5 h-5" size={20} />
